@@ -3,9 +3,9 @@ package main
 import (
 	"errors"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+	"github.com/madiyarrakhman/nice-meet/internal/infrastructure"
+	"github.com/madiyarrakhman/nice-meet/internal/models"
 	"log"
-	"nice-meet/src"
-	"nice-meet/src/models"
 )
 
 var commands = map[string]string{
@@ -16,7 +16,7 @@ var commands = map[string]string{
 }
 
 func main() {
-	app := src.NewApp()
+	app := infrastructure.NewApp()
 
 	updateConfig := tgbotapi.NewUpdate(0)
 	updateConfig.Timeout = 30
